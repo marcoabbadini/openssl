@@ -225,7 +225,7 @@ static int net_sim_process_one(struct net_sim *s, int skip_forward)
         return 0;
 
     if (!pkt->success) {
-        OSSL_CC_LOSS_INFO loss_info = {0};
+        OSSL_CC_LOSS_INFO loss_info = {{0}};
 
         loss_info.tx_time = pkt->tx_time;
         loss_info.tx_size = pkt->size;
@@ -240,7 +240,7 @@ static int net_sim_process_one(struct net_sim *s, int skip_forward)
         ossl_pqueue_NET_PKT_pop(s->pkts);
         OPENSSL_free(pkt);
     } else {
-        OSSL_CC_ACK_INFO ack_info = {0};
+        OSSL_CC_ACK_INFO ack_info = {{0}};
 
         ack_info.tx_time = pkt->tx_time;
         ack_info.tx_size = pkt->size;
@@ -481,8 +481,8 @@ static int test_sanity(void)
     int testresult = 0;
     OSSL_CC_DATA *cc = NULL;
     const OSSL_CC_METHOD *ccm = &ossl_cc_newreno_method;
-    OSSL_CC_LOSS_INFO loss_info = {0};
-    OSSL_CC_ACK_INFO ack_info = {0};
+    OSSL_CC_LOSS_INFO loss_info = {{0}};
+    OSSL_CC_ACK_INFO ack_info = {{0}};
     uint64_t allowance, allowance2;
     OSSL_PARAM params[3], *p = params;
     size_t mdpl = 1472, diag_mdpl = SIZE_MAX;

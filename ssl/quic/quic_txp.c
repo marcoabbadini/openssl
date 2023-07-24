@@ -2010,7 +2010,7 @@ static int txp_generate_stream_frames(OSSL_QUIC_TX_PACKETISER *txp,
                                       uint64_t *new_credit_consumed)
 {
     int rc = 0;
-    struct chunk_info chunks[2] = {0};
+    struct chunk_info chunks[2] = {{{0}}};
     const uint32_t enc_level = pkt->h.enc_level;
     QUIC_TXPIM_PKT *tpkt = pkt->tpkt;
     struct tx_helper *h = &pkt->h;

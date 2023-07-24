@@ -113,7 +113,7 @@ static int test_generic(INFO *info, int kind)
     size_t num_iov;
     QUIC_TXPIM_CHUNK chunk = {42, 0, 11, 0};
     OSSL_QUIC_FRAME_ACK ack = {0};
-    OSSL_QUIC_ACK_RANGE ack_ranges[1] = {0};
+    OSSL_QUIC_ACK_RANGE ack_ranges[1] = {{0}};
     QUIC_CFQ_ITEM *cfq_item = NULL;
     uint32_t pn_space = (kind == TEST_KIND_DISCARD)
         ? QUIC_PN_SPACE_HANDSHAKE : QUIC_PN_SPACE_APP;
@@ -318,7 +318,7 @@ err:
 static int test_fifd(int idx)
 {
     int testresult = 0;
-    INFO info = {0};
+    INFO info = {{0}};
     size_t i;
 
     cur_info = &info;

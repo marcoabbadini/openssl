@@ -127,7 +127,7 @@ static int gen_rand_conn_id(OSSL_LIB_CTX *libctx, size_t len, QUIC_CONN_ID *cid)
 
 static int ch_init(QUIC_CHANNEL *ch)
 {
-    OSSL_QUIC_TX_PACKETISER_ARGS txp_args = {0};
+    OSSL_QUIC_TX_PACKETISER_ARGS txp_args = {{0}};
     OSSL_QTX_ARGS qtx_args = {0};
     OSSL_QRX_ARGS qrx_args = {0};
     QUIC_TLS_ARGS tls_args = {0};

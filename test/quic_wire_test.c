@@ -95,7 +95,7 @@ static int encode_case_3_enc(WPACKET *pkt)
 
 static int encode_case_3_dec(PACKET *pkt, ossl_ssize_t fail)
 {
-    OSSL_QUIC_ACK_RANGE ranges[4] = {0};
+    OSSL_QUIC_ACK_RANGE ranges[4] = {{0}};
     OSSL_QUIC_FRAME_ACK f = {0};
     uint64_t total_ranges = 0, peek_total_ranges = 0;
     int ret;
@@ -1372,7 +1372,7 @@ static const unsigned char ack_case_7_input[] = {
 
 static int ack_generic_decode(PACKET *pkt)
 {
-    OSSL_QUIC_ACK_RANGE ranges[8] = {0};
+    OSSL_QUIC_ACK_RANGE ranges[8] = {{0}};
     OSSL_QUIC_FRAME_ACK f = {0};
     uint64_t total_ranges = 0, peek_total_ranges = 0;
     int r;

@@ -2685,8 +2685,8 @@ static const struct pkt_hdr_test *const pkt_hdr_tests[] = {
  * Count of number of times we observed an unchanged (u) or changed (c) bit in
  * each header-protectable bit over all test suites.
  */
-static unsigned int counts_u[HPR_CIPHER_COUNT][37] = {0};
-static unsigned int counts_c[HPR_CIPHER_COUNT][37] = {0};
+static unsigned int counts_u[HPR_CIPHER_COUNT][37] = {{0}};
+static unsigned int counts_c[HPR_CIPHER_COUNT][37] = {{0}};
 
 #define TEST_PKT_BUF_LEN 20000
 
